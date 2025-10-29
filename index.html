@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño y Manufactura Digital</title>
+    
+    <style>
+        /* --- Estilos Generales --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- Encabezado --- */
+        header {
+            background-color: #2c3e50; /* Un azul oscuro */
+            color: #ecf0f1; /* Un blanco suave */
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid #3498db; /* Un toque de azul brillante */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        /* --- Contenido Principal --- */
+        main {
+            max-width: 1200px;
+            margin: 40px auto; /* Centra el contenido */
+            padding: 0 20px;
+        }
+
+        /* --- Sección de Bienvenida --- */
+        .welcome-section {
+            text-align: center;
+            margin-bottom: 50px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .welcome-section h2 {
+            color: #3498db;
+            margin-top: 0;
+            font-size: 2rem;
+        }
+
+        .welcome-section p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Cuadrícula de Habilidades (Tarjetas) --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px; /* Espacio entre las tarjetas */
+        }
+
+        .skill-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: hidden; /* Para que el borde redondeado funcione bien */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px); /* Efecto sutil al pasar el mouse */
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+
+        .skill-card-content {
+            padding: 30px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+
+        .skill-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #7f8c8d; /* Un gris sutil */
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-card p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        /* --- Pie de Página --- */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px 20px;
+            background-color: #34495e;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Diseño y Manufactura Digital</h1>
+    </header>
+
+    <main>
+
+        <section class="welcome-section">
+            <h2>Bienvenido a mi Portafolio</h2>
+            <p>
+                En este espacio, exploro cómo las tecnologías de fabricación digital permiten transformar ideas conceptuales en objetos tangibles y funcionales. Desde la creación de volúmenes con <strong>impresión 3D</strong> hasta la precisión del <strong>corte láser</strong> y la inteligencia del <strong>diseño de PCB</strong>, mi enfoque es dominar las herramientas que dan vida a los prototipos.
+            </p>
+        </section>
+
+        <section class="skills-grid">
+
+            <article class="skill-card">
+                <div class="skill-card-content">
+                    <h3>Impresión 3D</h3>
+                    <h4>Introducción</h4>
+                    <p>La impresión 3D es una tecnología que permite transformar modelos digitales en objetos físicos mediante la superposición de capas de material, como plástico o resina. Gracias a esta técnica, es posible crear piezas personalizadas, prototipos y figuras con gran precisión, directamente desde una computadora.</p>
+                </div>
+            </article>
+
+            <article class="skill-card">
+                <div class="skill-card-content">
+                    <h3>Corte Láser</h3>
+                    <h4>Introducción</h4>
+                    <p>El corte láser es una técnica de fabricación digital que utiliza un haz de luz concentrado para cortar o grabar materiales como madera, acrílico o MDF con gran precisión. Esta herramienta permite crear piezas que encajan perfectamente entre sí, por lo que se usa ampliamente en diseño, arquitectura y prototipado.</p>
+                </div>
+            </article>
+
+            <article class="skill-card">
+                <div class="skill-card-content">
+                    <h3>Diseño de PCB</h3>
+                    <h4>Introducción</h4>
+                    <p>El diseño de una PCB (Printed Circuit Board) permite convertir un circuito armado en protoboard en una placa compacta y funcional. En este proyecto elaboré un temporizador con un 555 que enciende y apaga un LED de forma intermitente. El diseño y la simulación se realizaron en EasyEDA, una herramienta en línea para crear esquemas eléctricos y placas de circuito impreso.</p>
+                </div>
+            </article>
+
+        </section> </main>
+
+    <footer>
+        <p>&copy; 2025 - Mi Portafolio de Diseño y Manufactura</p>
+    </footer>
+
+</body>
+</html>
