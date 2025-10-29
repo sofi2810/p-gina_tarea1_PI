@@ -6,7 +6,7 @@
     <title>Impresión 3D - Star Fidget</title>
     
     <style>
-        /* --- Estilos Generales (Iguales al index) --- */
+        /* --- Estilos Generales --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
@@ -16,7 +16,7 @@
             line-height: 1.6;
         }
 
-        /* --- Encabezado (Igual al index) --- */
+        /* --- Encabezado --- */
         header {
             background-color: #a12c2c;
             color: #ecf0f1;
@@ -24,21 +24,57 @@
             text-align: center;
             border-bottom: 4px solid #e74c3c;
         }
-
         header h1 {
             margin: 0;
             font-size: 2.5rem;
             font-weight: 600;
         }
 
+        /* --- **** NUEVO: MENÚ DE NAVEGACIÓN **** --- */
+        nav.navbar {
+            background-color: #c0392b; /* Rojo medio */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav.navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Pone los enlaces en horizontal */
+            justify-content: center; /* Centra los enlaces */
+        }
+        nav.navbar li {
+            position: relative;
+        }
+        nav.navbar a {
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        /* Efecto al pasar el mouse */
+        nav.navbar a:hover {
+            background-color: #a12c2c; /* Rojo oscuro */
+        }
+        /* Estilo para la página actual */
+        nav.navbar a.active {
+            background-color: #a12c2c; 
+            font-weight: 700;
+        }
+        /* --- **** FIN DE ESTILOS DE MENÚ **** --- */
+
+
         /* --- Contenido Principal --- */
         main {
-            max-width: 900px; /* Un poco más estrecho para leer mejor */
+            max-width: 900px; 
             margin: 40px auto;
             padding: 0 20px;
         }
         
-        /* --- NUEVO: Estilos de Página de Proyecto --- */
+        /* --- Estilos de Página de Proyecto --- */
         .project-page {
             background-color: #ffffff;
             padding: 30px 40px;
@@ -46,84 +82,38 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
+        /* Quitamos el enlace de "volver" ya que tenemos el menú */
         .project-page h2 {
-            font-size: 1.8rem;
+            font-size: 2rem; /* Título más grande */
             color: #c0392b;
-            margin-top: 30px;
+            margin-top: 10px; /* Menos espacio arriba */
             margin-bottom: 15px;
             border-bottom: 2px solid #f0f0f0;
             padding-bottom: 10px;
         }
-
-        .project-page h3 { /* Para los títulos de los pasos */
-            font-size: 1.4rem;
-            color: #a12c2c;
-            margin-top: 25px;
-        }
-
-        .project-page p {
-            font-size: 1.05rem;
-            margin-bottom: 15px;
-        }
-
+        .project-page h3 { font-size: 1.4rem; color: #a12c2c; margin-top: 25px; }
+        .project-page p { font-size: 1.05rem; margin-bottom: 15px; }
         .project-page .intro {
             font-size: 1.2rem;
             font-weight: 300;
             color: #555;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
+            padding-bottom: 10px;
             margin-bottom: 20px;
         }
+        .project-page ol { list-style-type: decimal; margin-left: 20px; padding-left: 15px; }
+        .project-page ol li { margin-bottom: 15px; font-size: 1.05rem; }
 
-        /* Estilos para la lista de pasos */
-        .project-page ol {
-            list-style-type: decimal;
-            margin-left: 20px;
-            padding-left: 15px;
-        }
-
-        .project-page ol li {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-
-        /* Botón para volver */
-        .back-link {
-            display: inline-block;
-            margin-bottom: 30px;
-            font-size: 1rem;
-            color: #c0392b;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s ease;
-        }
-
-        .back-link:hover {
-            color: #e74c3c;
-            text-decoration: underline;
-        }
-
-        /* --- NUEVO: Estilos del Carrusel (Slideshow) --- */
+        /* --- Estilos del Carrusel (Slideshow) --- */
         .slideshow-container {
             max-width: 100%;
             position: relative;
             margin: 20px auto 30px auto;
             border-radius: 8px;
-            overflow: hidden; /* Para que las imágenes respeten el borde */
+            overflow: hidden; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-
-        /* Esconde las imágenes por defecto */
-        .mySlides {
-            display: none;
-        }
-
-        .mySlides img {
-            width: 100%;
-            vertical-align: middle; /* Quita espacio extra bajo la imagen */
-        }
-
-        /* Flechas de Siguiente y Anterior */
+        .mySlides { display: none; }
+        .mySlides img { width: 100%; vertical-align: middle; }
         .prev, .next {
             cursor: pointer;
             position: absolute;
@@ -139,29 +129,12 @@
             user-select: none;
             background-color: rgba(0, 0, 0, 0.4);
         }
+        .next { right: 0; border-radius: 3px 0 0 3px; }
+        .prev:hover, .next:hover { background-color: rgba(0, 0, 0, 0.8); }
+        .fade { animation-name: fade; animation-duration: 1.5s; }
+        @keyframes fade { from {opacity: .4} to {opacity: 1} }
 
-        /* Posición de la flecha "next" */
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        /* Animación de Fade */
-        .fade {
-            animation-name: fade;
-            animation-duration: 1.5s;
-        }
-
-        @keyframes fade {
-            from {opacity: .4}
-            to {opacity: 1}
-        }
-
-        /* --- Pie de Página (Igual al index) --- */
+        /* --- Pie de Página --- */
         footer {
             text-align: center;
             margin-top: 60px;
@@ -178,28 +151,30 @@
         <h1>Diseño y Manufactura Digital</h1>
     </header>
 
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="impresion3d.html" class="active">Impresión 3D</a></li>
+            <li><a href="#">Corte Láser</a></li>
+            <li><a href="#">Diseño de PCB</a></li>
+        </ul>
+    </nav>
     <main>
         <article class="project-page">
             
-            <a href="index.html" class="back-link">← Volver al Inicio</a>
-
             <h2>Impresión 3D</h2>
             <p class="intro">En este proyecto elaboré un “star fidget”.</p>
 
             <div class="slideshow-container">
-
                 <div class="mySlides fade">
                     <img src="https://placehold.co/800x500/a12c2c/white?text=Diseño+en+Tinkercad" style="width:100%">
-                    </div>
-
+                </div>
                 <div class="mySlides fade">
                     <img src="https://placehold.co/800x500/c0392b/white?text=Modelo+Exportado+STL" style="width:100%">
-                    </div>
-
+                </div>
                 <div class="mySlides fade">
                     <img src="https://placehold.co/800x500/e74c3c/white?text=Impresión+Final" style="width:100%">
-                    </div>
-
+                </div>
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
@@ -209,30 +184,12 @@
             <h3>Paso 2: Crear la estrella paso a paso</h3>
             <p>Diseño del Star Fidget, formado por cuatro estrellas de distintos tamaños, cada una rotada y alineada.</p>
             <ol>
-                <li>
-                    <strong>Crear la estrella base</strong><br>
-                    Arrastra una forma de estrella (Star) desde las Formas Básicas al plano de trabajo. Ajusta su tamaño a 50 mm × 50 mm y su altura a unos 2–3 mm (grosor recomendado para impresión 3D). Deja la rotación en 0 °. Esta será la estrella más grande.
-                </li>
-                <li>
-                    <strong>Duplicar y reducir</strong><br>
-                    Duplica la estrella (Ctrl + D). Cambia su tamaño a 47 mm × 47 mm (reducción de 3 mm).
-                </li>
-                <li>
-                    <strong>Repetir el patrón</strong><br>
-                    Duplica nuevamente la segunda estrella. De esta forma tendrás cuatro estrellas concéntricas, cada una ligeramente más pequeña que la anterior.
-                </li>
-                <li>
-                    <strong>Alinear las estrellas</strong><br>
-                    Selecciona todas las estrellas y utiliza la herramienta Alinear. Haz clic en los puntos centrales (horizontal y vertical) para que todas las figuras queden perfectamente centradas unas dentro de otras.
-                </li>
-                <li>
-                    <strong>Agrupar las formas</strong><br>
-                    Con todas las estrellas aún seleccionadas, presiona Ctrl + G (Group) para combinarlas en un solo objeto sólido. Esto evita que durante la impresión queden separadas o con huecos entre ellas.
-                </li>
-                <li>
-                    <strong>Crear el corte</strong><br>
-                    Arrastra un cilindro hueco (“Hole Cylinder”) al centro del objeto. Ajusta su diámetro a unos 10 mm (puedes modificarlo según el tamaño del eje que desees). Centra el cilindro con la herramienta Align y agrúpalo con el resto del modelo. De esta manera se genera el agujero central del fidget, completando el diseño.
-                </li>
+                <li><strong>Crear la estrella base</strong><br> Arrastra una forma de estrella (Star)...</li>
+                <li><strong>Duplicar y reducir</strong><br> Duplica la estrella (Ctrl + D)...</li>
+                <li><strong>Repetir el patrón</strong><br> Duplica nuevamente la segunda estrella...</li>
+                <li><strong>Alinear las estrellas</strong><br> Selecciona todas las estrellas y utiliza la herramienta Alinear...</li>
+                <li><strong>Agrupar las formas</strong><br> Con todas las estrellas aún seleccionadas, presiona Ctrl + G (Group)...</li>
+                <li><strong>Crear el corte</strong><br> Arrastra un cilindro hueco (“Hole Cylinder”)...</li>
             </ol>
             
             <h3>Paso 3: Configurar parámetros para impresión</h3>
@@ -248,24 +205,15 @@
     <script>
         let slideIndex = 1;
         showSlides(slideIndex);
-
-        // Controles de Siguiente/Anterior
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
+        function plusSlides(n) { showSlides(slideIndex += n); }
         function showSlides(n) {
             let i;
             let slides = document.getElementsByClassName("mySlides");
-            if (n > slides.length) {slideIndex = 1} // Vuelve al primero
-            if (n < 1) {slideIndex = slides.length} // Va al último
-            
-            // Oculta todas las imágenes
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
-            
-            // Muestra la imagen actual
             slides[slideIndex-1].style.display = "block";
         }
     </script>
