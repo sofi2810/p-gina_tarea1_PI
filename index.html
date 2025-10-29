@@ -15,7 +15,6 @@
             color: #333;
             line-height: 1.6;
         }
-
         /* --- Encabezado --- */
         header {
             background-color: #a12c2c;
@@ -24,24 +23,22 @@
             text-align: center;
             border-bottom: 4px solid #e74c3c;
         }
-
         header h1 {
             margin: 0;
             font-size: 2.5rem;
             font-weight: 600;
         }
-
-        /* --- **** NUEVO: MENÚ DE NAVEGACIÓN **** --- */
+        /* --- Menú de Navegación --- */
         nav.navbar {
-            background-color: #c0392b; /* Rojo medio */
+            background-color: #c0392b;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         nav.navbar ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
-            display: flex; /* Pone los enlaces en horizontal */
-            justify-content: center; /* Centra los enlaces */
+            display: flex;
+            justify-content: center;
         }
         nav.navbar li {
             position: relative;
@@ -56,25 +53,19 @@
             font-size: 1rem;
             transition: background-color 0.3s ease;
         }
-        /* Efecto al pasar el mouse */
         nav.navbar a:hover {
-            background-color: #a12c2c; /* Rojo oscuro */
+            background-color: #a12c2c;
         }
-        /* Estilo para la página actual */
         nav.navbar a.active {
             background-color: #a12c2c; 
             font-weight: 700;
         }
-        /* --- **** FIN DE ESTILOS DE MENÚ **** --- */
-
-
         /* --- Contenido Principal --- */
         main {
             max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
         }
-
         /* --- Sección de Bienvenida --- */
         .welcome-section {
             text-align: center;
@@ -86,7 +77,6 @@
         }
         .welcome-section h2 { color: #c0392b; margin-top: 0; font-size: 2rem; }
         .welcome-section p { font-size: 1.1rem; max-width: 800px; margin: 0 auto; }
-
         /* --- Cuadrícula de Habilidades (Tarjetas) --- */
         .skills-grid {
             display: grid;
@@ -104,17 +94,15 @@
             transform: translateY(-5px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.12);
         }
-        /* Estilo para el enlace de la tarjeta */
         .skill-card a {
             text-decoration: none;
             color: inherit;
-            display: block; /* Hace que toda la tarjeta sea el enlace */
+            display: block;
         }
         .skill-card-content { padding: 30px; }
         .skill-card h3 { font-size: 1.8rem; color: #a12c2c; margin-top: 0; margin-bottom: 15px; border-bottom: 2px solid #ecf0f1; padding-bottom: 10px; }
         .skill-card h4 { font-size: 1rem; font-weight: 600; color: #7f8c8d; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
         .skill-card p { font-size: 1rem; color: #555; margin-bottom: 0; }
-
         /* --- Pie de Página --- */
         footer {
             text-align: center;
@@ -136,10 +124,11 @@
         <ul>
             <li><a href="index.html" class="active">Inicio</a></li>
             <li><a href="impresion3d.html">Impresión 3D</a></li>
-            <li><a href="#">Corte Láser</a></li>
+            <li><a href="cortelaser.html">Corte Láser</a></li> 
             <li><a href="#">Diseño de PCB</a></li>
         </ul>
     </nav>
+
     <main>
 
         <section class="welcome-section">
@@ -162,11 +151,13 @@
             </article>
 
             <article class="skill-card">
-                <div class="skill-card-content">
-                    <h3>Corte Láser</h3>
-                    <h4>Introducción</h4>
-                    <p>El corte láser es una técnica de fabricación digital que utiliza un haz de luz concentrado para cortar o grabar materiales como madera, acrílico o MDF...</p>
-                </div>
+                <a href="cortelaser.html">
+                    <div class="skill-card-content">
+                        <h3>Corte Láser</h3>
+                        <h4>Introducción</h4>
+                        <p>El corte láser es una técnica de fabricación digital que utiliza un haz de luz concentrado para cortar o grabar materiales como madera, acrílico o MDF...</p>
+                    </div>
+                </a>
             </article>
 
             <article class="skill-card">
